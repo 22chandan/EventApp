@@ -44,6 +44,8 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     String text = lorem(words: 300);
+    double currH = MediaQuery.of(context).size.height;
+    double currW = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black12,
@@ -73,18 +75,19 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 36),
+                    margin: EdgeInsets.only(top: currH * 0.045),
                     child: Image.network("${result[widget.index].bannerImage}"),
                   ),
                   Container(
-                      margin: EdgeInsets.only(top: 10, left: 20),
+                      margin: EdgeInsets.only(
+                          top: currH * .01, left: currW * 0.052),
                       child: Row(
                         children: [
                           Text(
                             "${result[widget.index].title}",
                             textAlign: TextAlign.start,
                             style: TextStyle(
-                                fontSize: 40,
+                                fontSize: currW * .09,
                                 color: Colors.black,
                                 decoration: TextDecoration.none),
                           ),
@@ -102,7 +105,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 15),
+                          margin: EdgeInsets.only(left: currW * 0.052),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -124,7 +127,8 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10, left: 20),
+                    margin:
+                        EdgeInsets.only(top: currH * .01, left: currW * 0.052),
                     child: Row(
                       children: [
                         ClipRRect(
@@ -135,7 +139,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 15),
+                          margin: EdgeInsets.only(left: currW * 0.052),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -157,7 +161,8 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10, left: 20),
+                    margin:
+                        EdgeInsets.only(top: currH * .01, left: currW * 0.052),
                     child: Row(
                       children: [
                         ClipRRect(
@@ -168,7 +173,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 15),
+                          margin: EdgeInsets.only(left: currW * 0.052),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -190,7 +195,8 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 20, top: 10),
+                    margin:
+                        EdgeInsets.only(top: currH * .01, left: currW * 0.052),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -201,7 +207,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: currW * 0.02,
                         ),
                         ExpandableText(
                           "${result[widget.index].description}" + text,
@@ -223,8 +229,8 @@ class _DetailPageState extends State<DetailPage> {
             ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: SizedBox(
-        height: 70.0,
-        width: 300,
+        height: currH * 0.08,
+        width: currW * 0.7,
         child: FittedBox(
           child: FloatingActionButton.extended(
             elevation: 8,

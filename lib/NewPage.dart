@@ -369,7 +369,8 @@ class _SearchPageState extends State<SearchPage> {
                                                     Padding(
                                                         padding:
                                                             EdgeInsets.only(
-                                                                top: 30)),
+                                                                top: currH *
+                                                                    0.03)),
                                                     Text(
                                                       "${result[index].title}",
                                                       softWrap: false,

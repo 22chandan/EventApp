@@ -29,6 +29,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    double currH = MediaQuery.of(context).size.height;
+    double currW = MediaQuery.of(context).size.width;
     return Scaffold(
       body: NewsPage(),
     );
@@ -40,12 +42,14 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double currH = MediaQuery.of(context).size.height;
+    double currW = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
           // The search area here
           title: Container(
         width: double.infinity,
-        height: 40,
+        height: currH * 0.2,
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(5)),
         child: Center(
